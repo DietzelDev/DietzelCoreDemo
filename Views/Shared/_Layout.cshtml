@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DietzelCoreDemo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/fontawesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <!-- Bootstrap NavBar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
+            <!--<div class="container">-->
+            <a class="navbar-brand js-scroll-trigger" href="/">
+                <img src="https://dietzelinc.com/img/logo.png?Scale=233" class="img-fluid align-top" alt="DietzelInc Logo">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
+                           style="color:#fd7e14; font-size:x-large;">Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Drilling</a>
+                            <a class="dropdown-item" href="#">Foundations</a>
+                            <a class="dropdown-item" href="#">Rebar</a>
+                            <a class="dropdown-item" href="#">etc..</a>
+                        </div>
+                        <!-- <a asp-controller="Home" asp-action="AboutUs" class="nav-link" style="color:#fd7e14; font-size:x-large;">Contact</a>-->
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
+                           style="color:#fd7e14; font-size:x-large;">Company</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Our Vision</a>
+                            <a class="dropdown-item" href="#">History</a>
+                            <a class="dropdown-item" href="#">Core Values</a>
+                            <a class="dropdown-item" href="#">Employee Portal</a>
+                        </div>
+                        <!-- <a asp-controller="Home" asp-action="AboutUs" class="nav-link" style="color:#fd7e14; font-size:x-large;">Contact</a>-->
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
+                           style="color:#fd7e14; font-size:x-large;">Projects</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Project 1</a>
+                            <a class="dropdown-item" href="#">Project 2</a>
+                            <a class="dropdown-item" href="#">Project 3</a>
+                        </div>
+                        <!-- <a asp-controller="Home" asp-action="AboutUs" class="nav-link" style="color:#fd7e14; font-size:x-large;">Contact</a>-->
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
+                           style="color:#fd7e14; font-size:x-large;">Partners</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Kiewit</a>
+                            <a class="dropdown-item" href="#">NPPD</a>
+                            <a class="dropdown-item" href="#">OPPD</a>
+                        </div>
+                        <!-- <a asp-controller="Home" asp-action="AboutUs" class="nav-link" style="color:#fd7e14; font-size:x-large;">Contact</a>-->
+                    </li>
+                    <li class="nav-item ">
+                        <a asp-controller="Home" asp-action="SignIn" class="nav-link" style="color:#fd7e14; font-size:x-large;">Contact</a>
+                    </li>
+
+                    <!-- This menu is hidden in bigger devices with d-sm-none.
+    The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
+                    <li class="nav-item dropdown d-sm-block d-md-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Tasks</a>
+                            <a class="dropdown-item" href="#">Etc ...</a>
+                        </div>
+                    </li>
+                    <!-- Smaller devices menu END -->
+
+                </ul>
+                <div class="ml-auto">
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!--</div>-->
+        </nav>
+        <!-- NavBar END -->
+    </header>
+    <div class="row" id="body-row">
+        <!-- Sidebar -->
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+            <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+            <!-- Bootstrap List Group -->
+            <ul class="list-group sticky-top sticky-offset">
+                <!-- Separator with title -->
+                <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                    <small>Emloyee Portal</small>
+                </li>
+                <!-- /END Separator -->
+                <!-- Menu with submenu -->
+                <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-dashboard fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Projects</span>
+                        <span class="submenu-icon ml-auto"></span>
+                    </div>
+                </a>
+                <!-- Submenu content -->
+                <div id="submenu1" class="collapse sidebar-submenu">
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Project No. 7667</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Project No. 7668</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Project No. 7669...</span>
+                    </a>
+                </div>
+                <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-user fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Profile</span>
+                        <span class="submenu-icon ml-auto"></span>
+                    </div>
+                </a>
+                <!-- Submenu content -->
+                <div id="submenu2" class="collapse sidebar-submenu">
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Settings</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Password</span>
+                    </a>
+                </div>
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-tasks fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Equipment</span>
+                    </div>
+                </a>
+                <!-- Separator with title -->
+                <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                    <small>OPTIONS</small>
+                </li>
+                <!-- /END Separator -->
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-calendar fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Calendar</span>
+                    </div>
+                </a>
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-envelope-o fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Messages <span class="badge badge-pill badge-primary ml-2">5</span></span>
+                    </div>
+                </a>
+                <!-- Separator without title -->
+                <li class="list-group-item sidebar-separator menu-collapsed"></li>
+                <!-- /END Separator -->
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-question fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Help</span>
+                    </div>
+                </a>
+                <a href="#" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                        <span id="collapse-text" class="menu-collapsed">Collapse</span>
+                    </div>
+                </a>
+                <!-- Logo -->
+                <!--<li class="list-group-item logo-separator d-flex justify-content-center">
+        <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30">
+    </li>-->
+            </ul>
+            <!-- List Group END-->
+        </div>
+        <!-- sidebar-container END -->
+        <!-- MAIN -->
+        <div class="col py-3">
+
+
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+
+        </div>
+
+
+        <!--<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - DietzelCoreDemo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>-->
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
